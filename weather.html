@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Weather Prediction</title>
+      <link href = "/Weather Forecast/weather.css" rel = "stylesheet">
+      <script src = "/Weather Forecast/weather.js" defer ></script>
+    </head>
+    <body>
+        <div class = "weatherForecast">Weather Forecast</div>
+        <div class = "menu">&#9776;</div>
+        <div class = "menuBar">
+            <h1 class = "menuTitle">Menu Options</h1>
+            <hr>
+            <ul>
+                <li class = "today">Today</li>
+                <li>Air quality</li>
+                <li>Saved Cities</li>
+                <li class = "about">About</li>
+                <li><a id = "personal">Log in</a></li>
+            </ul>
+        </div>
+        <div class = "SlideIn">
+            <div class = "mainBox">
+                <img src = "weather.png" class = "weatherIcon">
+                <div class = "searchingTool">
+                    <div class = "find">&#128269;</div>
+                    <div class = "boxCity">Choose Your City &#9660;</div>
+                    <div class = "boxNation" data-selected="false">Choose Your Nation &#9660;</div>
+                    <div class = "listNation" role = "listbox">
+                        <h2>A</h2>
+                        <div role="optionNation" data-country="AR">Argentina</div>
+                        <div role="optionNation" data-country="AU">Australia</div>
+                        <hr>
+
+                        <h2>B</h2>
+                        <div role="optionNation" data-country="BM">Bermuda</div>
+                        <div role="optionNation" data-country="BR">Brazil</div>
+                        <div role="optionNation" data-country="BN">Brunei</div>
+                        <div role="optionNation" data-country="BG">Bulgaria</div>
+                        <hr>
+
+                        <h2>C</h2>
+                        <div role="optionNation" data-country="KH">Cambodia</div>
+                        <div role="optionNation" data-country="CA">Canada</div>
+                        <div role="optionNation" data-country="CN">China</div>
+                        <div role="optionNation" data-country="CO">Colombia</div>
+                        <div role="optionNation" data-country="HR">Croatia</div>
+                        <div role="optionNation" data-country="CZ">Czech Republic</div>
+                        <hr>
+
+                        <h2>E</h2>
+                        <div role="optionNation" data-country="EG">Egypt</div>
+                        <hr>
+
+                        <h2>F</h2>
+                        <div role="optionNation" data-country="FI">Finland</div>
+                        <div role="optionNation" data-country="FR">France</div>
+                        <hr>
+
+                        <h2>G</h2>
+                        <div role="optionNation" data-country="DE">Germany</div>
+                        <div role="optionNation" data-country="GR">Greece</div>
+                        <hr>
+
+                        <h2>I</h2>
+                        <div role="optionNation" data-country="IN">India</div>
+                        <div role="optionNation" data-country="ID">Indonesia</div>
+                        <div role="optionNation" data-country="IQ">Iraq</div>
+                        <div role="optionNation" data-country="IE">Ireland</div>
+                        <div role="optionNation" data-country="IL">Israel</div>
+                        <hr>
+
+                        <h2>J</h2>
+                        <div role="optionNation" data-country="JP">Japan</div>
+                        <div role="optionNation" data-country="JO">Jordan</div>
+                        <hr>
+
+                        <h2>K</h2>
+                        <div role="optionNation" data-country="KZ">Kazakhstan</div>
+                        <hr>
+
+                        <h2>L</h2>
+                        <div role="optionNation" data-country="LA">Laos</div>
+                        <hr>
+
+                        <h2>M</h2>
+                        <div role="optionNation" data-country="MG">Madagascar</div>
+                        <div role="optionNation" data-country="MY">Malaysia</div>
+                        <div role="optionNation" data-country="MT">Malta</div>
+                        <div role="optionNation" data-country="MO">Macao</div>
+                        <div role="optionNation" data-country="MX">Mexico</div>
+                        <div role="optionNation" data-country="MN">Mongolia</div>
+                        <div role="optionNation" data-country="MM">Myanmar</div>
+                        <hr>
+
+                        <h2>N</h2>
+                        <div role="optionNation" data-country="NP">Nepal</div>
+                        <div role="optionNation" data-country="NL">Netherlands</div>
+                        <div role="optionNation" data-country="NZ">New Zealand</div>
+                        <div role="optionNation" data-country="NO">Norway</div>
+                        <hr>
+
+                        <h2>P</h2>
+                        <div role="optionNation" data-country="PK">Pakistan</div>
+                        <div role="optionNation" data-country="PE">Peru</div>
+                        <div role="optionNation" data-country="PH">Philippines</div>
+                        <div role="optionNation" data-country="PL">Poland</div>
+                        <div role="optionNation" data-country="PT">Portugal</div>
+                        <hr>
+
+                        <h2>Q</h2>
+                        <div role="optionNation" data-country="QA">Qatar</div>
+                        <hr>
+
+                        <h2>R</h2>
+                        <div role="optionNation" data-country="RO">Romania</div>
+                        <hr>
+
+                        <h2>S</h2>
+                        <div role="optionNation" data-country="SG">Singapore</div>
+                        <div role="optionNation" data-country="ZA">South Africa</div>
+                        <div role="optionNation" data-country="KR">South Korea</div>
+                        <div role="optionNation" data-country="ES">Spain</div>
+                        <div role="optionNation" data-country="SE">Sweden</div>
+                        <div role="optionNation" data-country="CH">Switzerland</div>
+                        <hr>
+
+                        <h2>T</h2>
+                        <div role="optionNation" data-country="TW">Taiwan</div>
+                        <div role="optionNation" data-country="TH">Thailand</div>
+                        <div role="optionNation" data-country="TR">Turkey</div>
+                        <hr>
+
+                        <h2>U</h2>
+                        <div role="optionNation" data-country="GB">United Kingdom</div>
+                        <div role="optionNation" data-country="US">United States</div>
+                        <hr>
+
+                        <h2>V</h2>
+                        <div role="optionNation" data-country="VN">Vietnam</div>
+                        <hr>
+
+                        <h2>Y</h2>
+                        <div role="optionNation" data-country="YE">Yemen</div>
+                        <hr>
+
+                        <h2>Z</h2>
+                        <div role="optionNation" data-country="ZM">Zambia</div>
+                    </div>
+                    <div class = "listCity" role="listbox"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "day1"></div>
+        <div class = "day2"></div>
+        <div class = "day3"></div>
+        <div class = "day4"></div>
+        <div class = "day5"></div>
+        <div class = "dateandtime"></div>
+        <div class = "area"></div>
+        <div class = "SlideIn2">
+            <canvas class = "chartForTemp" width="850" height="500"></canvas>
+            <div class = "boxForInfomation">
+                <h1>Weather Information</h1>
+                <ul>
+                    <li class="tempMaxInDay"></li>
+                    <li class="tempMinInDay"></li>
+                    <li class="tempAverageInDay"></li>
+                    <li class="pressure"></li>
+                </ul>
+                <div class = "switchTable">
+                    <hr>
+                    <div class = "tempMinTable">Lowest temperature table <nav class = "tempMinCheck" type = "checkbox">&#10003;</nav></div>
+                    <div class = "tempMaxTable">Highest temperature table <nav class = "tempMaxCheck" type = "checkbox">&#10003;</nav></div>
+                    <div class = "cloudsTable">Density of clouds <nav class = "cloudsCheck" type = "checkbox">&#10003;</nav></div>
+                </div>
+            </div>
+            <canvas class = "chartForTempMax" width="850" height="500"></canvas>
+            <canvas class = "chartForClouds" width="850" height="500"></canvas>
+        </div>
+        <div class = "personalInfo">
+            <h1>Personal Information</h1>
+            <div class = "info">
+                <ul>
+                    <li class = "info_username"></li>
+                    <li class = "info_email"></li>
+                    <li class = "info_telephone"></li>
+                    <li class = "info_savedcity">Saved city</li>
+                </ul>
+                <p>This website is a personal products, so it may be get many <b><u>faults</u></b>. <br>Be kind and sympathy. <br><b><i>Thank you for your access.</i></b></p>
+            </div>
+            <div class = "Exit_Logout">
+                <div class = "exit">&#8592;</div>
+                <div class = "logout">Log out</div>
+                <div class = "deleteAcc">Delete Account</div>
+            </div>
+        </div>
+        <div class = "deleteWarning">
+            <p>Are you sure you want to delete your account?</p>
+            <div class = "decisionDel">
+                <div class = "no">No</div>
+                <div class = "yes">Yes</div>
+            </div>
+        </div>
+    </body>
+  </html>

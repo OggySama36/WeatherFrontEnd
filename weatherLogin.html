@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Log in Weather Forecast</title>
+      <link href = "/Weather Forecast/weatherLogin.css" rel = "stylesheet">
+      <script src = "/Weather Forecast/weatherLogin.js" defer></script>
+    </head>
+    <body>
+      <div class = "loginPage">
+        <h1>My weather Forecast</h1>
+        <form class = "formLogin" autocomplete="off">
+          <div class = "form_group">
+            <label class = "usernamelogin">Username</label>
+            <input id = "usernameLogin" type="text">
+          </div>
+          <div class = "form_group">
+            <label class = "passwordlogin">Password</label>
+            <input id = "passwordLogin" type="password">
+            <div class = "showLogin">&#128065;</div>
+            <div class = "hideLogin">&#128584;</div>
+          </div>
+          <button id = "submitLogin">Log in</button>
+        </form>
+
+        <form class = "formRegister" autocomplete="off">
+          <div class = "form_group">
+            <label class = "usernameregister">Username</label>
+            <input id = "usernameRegister" type="text">
+          </div>
+          <div class = "form_group">
+            <label class = "passwordregister">Password</label>
+            <input id = "passwordRegister" type="password">
+            <div class = "showRegister">&#128065;</div>
+            <div class = "hideRegister">&#128584;</div>
+          </div>
+          <div class = "form_group">
+            <label class = "email">Email</label>
+            <input id = "Email" type="email">
+          </div>
+          <div class = "form_group">
+            <label class = "phonenumber">Phone Number</label>
+            <input id = "phoneNumber" type="tel">
+          </div>
+          <button id = "submitRegister">Register</button>
+        </form>
+        <div class = "switchFormField">
+          <p class = "textSwitchForm">You don't have an account?</p>
+          <nav class = "switchFormButton">Register now</nav>
+        </div>
+      </div>
+    </body>
+  </html>
