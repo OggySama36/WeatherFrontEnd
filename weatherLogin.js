@@ -23,18 +23,18 @@ const formLogin = document.querySelector('.formLogin');
 const formRegister = document.querySelector('.formRegister');
 const personal = document.getElementById('personal');
 const randomBg = [
-    "/Weather Forecast/aurora.png",
-    "/Weather Forecast/city.png",
-    "/Weather Forecast/china.png",
-    "/Weather Forecast/dubai.png",
-    "/Weather Forecast/japan.png",
-    "/Weather Forecast/thuydien.png",
-    "/Weather Forecast/usa.png",
-    "/Weather Forecast/japan1.jpg",
-    "/Weather Forecast/australia.jpg",
-    "/Weather Forecast/giza.jpg",
-    "/Weather Forecast/giza1.jpg",
-    "/Weather Forecast/bermuda.jpg"
+    "aurora.png",
+    "city.png",
+    "china.png",
+    "dubai.png",
+    "japan.png",
+    "thuydien.png",
+    "usa.png",
+    "japan1.jpg",
+    "australia.jpg",
+    "giza.jpg",
+    "giza1.jpg",
+    "bermuda.jpg"
 ];
 setInterval(() => {
     const randomBgNum = Math.floor(Math.random() * randomBg.length);
