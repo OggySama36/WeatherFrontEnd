@@ -1222,7 +1222,7 @@ else{
 }
 personal.addEventListener('click', function(){
     if (personal.textContent.includes("Log in")){
-        window.location.href = "/login";
+        window.location.href = "weatherLogin.html";
     }
     else{
         personalInfo.style.opacity = 1;
