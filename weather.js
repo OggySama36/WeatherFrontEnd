@@ -34,6 +34,10 @@ const deleteAcc = document.querySelector('.deleteAcc');
 const deleteWarning = document.querySelector('.deleteWarning');
 const acceptDel = document.querySelector('.yes');
 const refuseDel = document.querySelector('.no');
+const send = document.getElementById('send');
+const feedback = document.getElementById('feedback');
+const boxfather_feedback = document.querySelector('.boxfather_feedback');
+const exitFeedback = document.querySelector('.exitFeedback');
 
 const info_username = document.querySelector('.info_username');
 const info_email = document.querySelector('.info_email');
@@ -1275,4 +1279,48 @@ refuseDel.addEventListener('click', function(){
     deleteWarning.style.opacity = 0;
     deleteWarning.style.zIndex = "-9999999";
     deleteWarning.style.pointerEvents = "none";
+});
+feedback.addEventListener('click', function(){
+    const userExitFirst = JSON.parse(localStorage.getItem('user'));
+    if (!userExitFirst){
+        alert('Please Log In or Register first^^');
+        return;
+    }
+    boxfather_feedback.style.opacity = 1;
+    boxfather_feedback.style.zIndex = "9999999";
+    boxfather_feedback.style.pointerEvents = "auto";
+});
+exitFeedback.addEventListener('click', () => {
+    boxfather_feedback.style.opacity = 0;
+    boxfather_feedback.style.zIndex = "-9999999";
+    boxfather_feedback.style.pointerEvents = "none";
+    document.getElementById('feedback_data').value = "";
+});
+
+send.addEventListener('click', async function(){
+    const getFeedBack_Data = document.getElementById('feedback_data').value;  
+    if(getFeedBack_Data == ""){
+        return
+    }
+    const res = await fetch('/FeedbackHandler', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            sendingFeedback: getFeedBack_Data,
+            clientSending: JSON.parse(localStorage.getItem('user')).email,
+            nameClient: JSON.parse(localStorage.getItem('user')).name,
+            messageSending: getFeedBack_Data
+        }),
+    });
+    const get_FeedbackAPI_Response = await res.json();
+    if (get_FeedbackAPI_Response.state){
+        alert(get_FeedbackAPI_Response.message);
+        document.getElementById('feedback_data').value = "";
+    }
+    else {
+        alert(get_FeedbackAPI_Response.message);
+        document.getElementById('feedback_data').value = "";
+    }
 });

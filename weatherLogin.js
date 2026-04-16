@@ -199,6 +199,10 @@ function check_ValidPassword(password){
     const checkCondition = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
     return checkCondition.test(password);
 }
+function check_ValidEmail(email){
+    const checkCondition = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return checkCondition.test(email);
+}
 submitRegister.addEventListener('click', async function(e){
     e.preventDefault();
     const get_UsernameData = document.getElementById('usernameRegister').value;
@@ -217,6 +221,10 @@ submitRegister.addEventListener('click', async function(e){
             'Contains at least one number\n' +
             'Contains at least one special character'
         )
+        return
+    }
+    if(!check_ValidEmail(get_Email)){
+        alert('Your email is not valid!');
         return
     }
     const res = await fetch('/RegisterHandler', {
@@ -273,6 +281,8 @@ switchFormButton.addEventListener('click', function(){
         email.style.color = "grey";
         phonenumber.style.transform = "translateY(0px)";
         phonenumber.style.color = "grey";
+        textSwitchForm.textContent = "You had an account?";
+        switchFormButton.textContent = "Log in now"
     }
     else {
         formLogin.style.opacity = "1";
@@ -287,5 +297,7 @@ switchFormButton.addEventListener('click', function(){
         usernamelogin.style.color = "grey";
         passwordlogin.style.transform = "translateY(0px)";
         passwordlogin.style.color = "grey";
+        textSwitchForm.textContent = "You don't have an account?";
+        switchFormButton.textContent = "Register now";
     }
 });
