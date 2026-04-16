@@ -1302,7 +1302,7 @@ send.addEventListener('click', async function(){
     if(getFeedBack_Data == ""){
         return
     }
-    const res = await fetch('/FeedbackHandler', {
+    const res = await fetch('https://weatherbackend-4565.onrender.com/FeedbackHandler', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
