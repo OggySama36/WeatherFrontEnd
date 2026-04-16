@@ -186,7 +186,7 @@ submitLogin.addEventListener('click', async function(e){
         usernamelogin.style.color = "grey";
         passwordlogin.style.transform = "translateY(0px)";
         passwordlogin.style.color = "grey";
-        window.location.href = "/weather.html";
+        window.location.href = "weather.html";
     }
     else {
         alert(response_LoginData.message);
