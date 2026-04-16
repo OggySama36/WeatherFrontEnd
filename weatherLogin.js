@@ -160,7 +160,7 @@ submitLogin.addEventListener('click', async function(e){
         alert('Please fill out your information!');
         return
     }
-    const res = await fetch('/LoginHandler', {
+    const res = await fetch('https://weatherbackend-4565.onrender.com/LoginHandler', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -227,7 +227,7 @@ submitRegister.addEventListener('click', async function(e){
         alert('Your email is not valid!');
         return
     }
-    const res = await fetch('/RegisterHandler', {
+    const res = await fetch('https://weatherbackend-4565.onrender.com/RegisterHandler', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

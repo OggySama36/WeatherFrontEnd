@@ -1248,7 +1248,7 @@ deleteAcc.addEventListener('click', function(){
     deleteWarning.style.pointerEvents = "auto";
 });
 acceptDel.addEventListener('click', async function(){
-    const res = await fetch('/DeleteAccoutHandler', {
+    const res = await fetch('https://weatherbackend-4565.onrender.com/DeleteAccoutHandler', {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
