@@ -160,6 +160,7 @@ submitLogin.addEventListener('click', async function(e){
         alert('Please fill out your information!');
         return
     }
+    submitLogin.disabled = true;
     const res = await fetch('https://weatherbackend-4565.onrender.com/LoginHandler', {
         method: "POST",
         headers: {
@@ -187,12 +188,14 @@ submitLogin.addEventListener('click', async function(e){
         passwordlogin.style.transform = "translateY(0px)";
         passwordlogin.style.color = "grey";
         window.location.href = "weather.html";
+        submitLogin.disabled = false;
     }
     else {
         alert(response_LoginData.message);
         document.getElementById('passwordLogin').value = "";
         passwordlogin.style.transform = "translateY(0px)";
         passwordlogin.style.color = "grey";
+        submitLogin.disabled = false;
     }
 });
 function check_ValidPassword(password){
@@ -202,6 +205,10 @@ function check_ValidPassword(password){
 function check_ValidEmail(email){
     const checkCondition = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return checkCondition.test(email);
+}
+function check_ValidTelephone(tel){
+    const checkCondition = /^[0-9]+$/;
+    return checkCondition.test(tel)
 }
 submitRegister.addEventListener('click', async function(e){
     e.preventDefault();
@@ -227,6 +234,11 @@ submitRegister.addEventListener('click', async function(e){
         alert('Your email is not valid!');
         return
     }
+    if(!check_ValidTelephone(get_PhoneNumber)){
+        alert('Your phone number is not valid!');
+        return
+    }
+    submitRegister.disabled = true;
     const res = await fetch('https://weatherbackend-4565.onrender.com/RegisterHandler', {
         method: "POST",
         headers: {
@@ -254,9 +266,11 @@ submitRegister.addEventListener('click', async function(e){
             email.style.color = "grey";
             phonenumber.style.transform = "translateY(0px)";
             phonenumber.style.color = "grey";
+            submitRegister.disabled = false;
         }
         else{
             alert(response_RegisterData.message);
+            submitRegister.disabled = false;
         }
 });
 switchFormButton.addEventListener('click', function(){
@@ -282,7 +296,8 @@ switchFormButton.addEventListener('click', function(){
         phonenumber.style.transform = "translateY(0px)";
         phonenumber.style.color = "grey";
         textSwitchForm.textContent = "You had an account?";
-        switchFormButton.textContent = "Log in now"
+        switchFormButton.textContent = "Log in now";
+        switchFormButton.style.textDecoration = "underline";
     }
     else {
         formLogin.style.opacity = "1";
@@ -299,5 +314,6 @@ switchFormButton.addEventListener('click', function(){
         passwordlogin.style.color = "grey";
         textSwitchForm.textContent = "You don't have an account?";
         switchFormButton.textContent = "Register now";
+        switchFormButton.style.textDecoration = "underline";
     }
 });

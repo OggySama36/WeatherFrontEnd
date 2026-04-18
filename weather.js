@@ -38,6 +38,7 @@ const send = document.getElementById('send');
 const feedback = document.getElementById('feedback');
 const boxfather_feedback = document.querySelector('.boxfather_feedback');
 const exitFeedback = document.querySelector('.exitFeedback');
+const qualityAir = document.querySelector('.qualityAir');
 
 const info_username = document.querySelector('.info_username');
 const info_email = document.querySelector('.info_email');
@@ -1323,4 +1324,7 @@ send.addEventListener('click', async function(){
         alert(get_FeedbackAPI_Response.message);
         document.getElementById('feedback_data').value = "";
     }
+});
+qualityAir.addEventListener('click', function(){
+    alert('Coming Soon!^^');
 });
